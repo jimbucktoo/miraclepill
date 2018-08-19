@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    var images = [UIImageView]()
 
     @IBOutlet weak var statePicker: UIPickerView!
     
@@ -74,6 +77,31 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.viewDidLoad()
         statePicker.dataSource = self
         statePicker.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        var contentWidth: CGFloat =  0.0
+        
+        for x in 0...2{
+            let image = UIImage(named: "icon\(x).png")
+            var imageView = UIImageView(image: image)
+            images.append(imageView)
+            
+            var newX: CGFloat = 0.0
+            newX = view.frame.midX + view.frame.size.width * CGFloat(x)
+            print("Content Width: \(contentWidth)")
+            print("NewX: \(newX)")
+            print("view.frame.midX: \(view.frame.midX)")
+            contentWidth += newX
+            
+            
+            scrollView.addSubview(imageView)
+            imageView.frame = CGRect(x: newX - 75, y: (view.frame.size.height / 2) - 75, width: 150, height: 150)
+        }
+        contentWidth -= (view.frame.midX * 3)
+        scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.size.height)
+        print("Count: \(images.count)")
     }
     
     override func didReceiveMemoryWarning() {
