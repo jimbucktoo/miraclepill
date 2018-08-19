@@ -85,7 +85,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         for x in 0...2{
             let image = UIImage(named: "icon\(x).png")
-            var imageView = UIImageView(image: image)
+            let imageView = UIImageView(image: image)
             images.append(imageView)
             
             var newX: CGFloat = 0.0
@@ -97,6 +97,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             
             
             scrollView.addSubview(imageView)
+            if x == 0 {
+            imageView.isHidden = true
+            }
             imageView.frame = CGRect(x: newX - 75, y: (view.frame.size.height / 2) - 75, width: 150, height: 150)
         }
         contentWidth -= (view.frame.midX * 3)
