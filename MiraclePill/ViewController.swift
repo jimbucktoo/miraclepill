@@ -97,9 +97,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             
             var newX: CGFloat = 0.0
             newX = view.frame.midX + view.frame.size.width * CGFloat(x)
-            print("Content Width: \(contentWidth)")
-            print("NewX: \(newX)")
-            print("view.frame.midX: \(view.frame.midX)")
             contentWidth += newX
             
             scrollView.addSubview(imageView)
@@ -110,7 +107,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
         contentWidth -= (view.frame.midX * 3)
         scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.size.height * 1.5)
-        print("Count: \(images.count)")
     }
     
     override func didReceiveMemoryWarning() {
@@ -127,30 +123,24 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView == statePicker {
-            print("statePicker used 1.")
             return 1
         } else if pickerView == countryPicker{
-            print("countryPicker used 1.")
             return 1
         } else {return 1}
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == statePicker {
-            print("statePicker used 2.")
             return states.count
         } else if pickerView == countryPicker{
-            print("countryPicker used 2.")
             return countries.count
         } else {return 0}
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == statePicker {
-            print("statePicker used 3.")
             return states[row]
         } else if pickerView == countryPicker{
-            print("countryPicker used 3.")
             return countries[row]
         } else {return ""}
     }
@@ -160,11 +150,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         if pickerView == statePicker {
             statePickerBtn.setTitle(states[row], for: UIControlState()) //UIControlState.normal
             statePicker.isHidden = true
-            print("statePicker used 4.")
         } else if pickerView == countryPicker {
             countryPickerBtn.setTitle(countries[row], for: UIControlState()) //UIControlState.normal
             countryPicker.isHidden = true
-            print("countryPicker used 4.")
         }
         
     }
