@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -279,16 +280,15 @@
                             <constraint firstItem="Zep-2e-oHz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wCe-Wf-Lms"/>
                             <constraint firstItem="K2Y-Hf-Twn" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yUe-6O-0q7"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="sac-C3-p43"/>
                     </view>
                     <size key="freeformSize" width="375" height="1472"/>
                     <connections>
                         <outlet property="countryPicker" destination="9FL-Ps-czE" id="EN5-wL-gqi"/>
                         <outlet property="countryPickerBtn" destination="Iug-wS-Wf0" id="5rH-ab-s4q"/>
-                        <outlet property="formView" destination="K2Y-Hf-Twn" id="kkd-iQ-ChJ"/>
                         <outlet property="scrollView" destination="Zep-2e-oHz" id="3nh-wb-Ydf"/>
                         <outlet property="statePicker" destination="FWx-Sc-AST" id="S8n-QW-IK3"/>
                         <outlet property="statePickerBtn" destination="2dZ-iR-Ena" id="jH2-SE-QDx"/>
-                        <outlet property="viewView" destination="8bC-Xf-vdC" id="yFE-fP-zuN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
