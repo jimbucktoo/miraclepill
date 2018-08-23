@@ -111,7 +111,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func stateBtnPressed(_ sender: Any) {
@@ -148,10 +147,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if pickerView == statePicker {
-            statePickerBtn.setTitle(states[row], for: UIControlState()) //UIControlState.normal
+            statePickerBtn.setTitle(states[row], for: UIControlState())
             statePicker.isHidden = true
         } else if pickerView == countryPicker {
-            countryPickerBtn.setTitle(countries[row], for: UIControlState()) //UIControlState.normal
+            countryPickerBtn.setTitle(countries[row], for: UIControlState())
             countryPicker.isHidden = true
         }
         
