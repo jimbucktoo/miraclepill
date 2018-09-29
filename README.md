@@ -1,6 +1,6 @@
 # miraclepill
 
-miraclepill is an iOS app coded in Swift to help me learn iOS development.
+miraclepill is an iOS application created in Swift to help me learn the fundamentals of iOS development.
 
 ## Technologies
 
